@@ -1,0 +1,16 @@
+/1/Testing/bin
+/1/Testing/obj
+/1/Testing/.vs
+/2/.vs
+/2/SocialNetwork/.vs
+/2/SocialNetwork/Business/obj
+/2/SocialNetwork/Business/bin
+/2/SocialNetwork/Data/obj
+/2/SocialNetwork/Data/bin
+/2/SocialNetwork/Domain/obj
+/2/SocialNetwork/Domain/bin
+/2/SocialNetwork/Initializer/obj
+/2/SocialNetwork/Initializer/bin
+/2/SocialNetwork/packages
+/2/SocialNetwork/SocialNetwork/obj
+/2/SocialNetwork/SocialNetwork/bin

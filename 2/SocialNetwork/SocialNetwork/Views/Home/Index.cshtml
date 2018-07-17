@@ -1,0 +1,67 @@
+﻿<div class="row well" data-bind="with: postDialog">
+    <div class="form-horizontal text-center col-md-8">
+        <div class="form-group">
+            <label for="inputName" class="col-sm-4 control-label">Имя</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputName" data-bind="value:name" placeholder="Введите Имя" value="@ViewBag.Name">
+                <p class="errorText" id="inputNameError"></p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputEmail" data-bind="value:email" placeholder="Введите Email" value="@ViewBag.Email">
+                <p class="errorText" id="inputEmailError"></p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputFood" class="col-sm-4 control-label">Еда</label>
+            <div class="col-sm-4">
+                <select class="form-control" id="inputFood" data-bind="options: foods, optionsText: 'Value', optionsValue: 'Id', value: valueFood, optionsCaption: 'Выберите блюдо!'"></select>
+                <p class="errorText" id="inputFoodError"></p>
+            </div>
+        </div>
+        <div class="form-group text-left errorText">
+            <ul data-bind="foreach:errors">
+                <li data-bind="text:$data"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row text-center col-md-4">
+        <button class="btn btn-success btn-block" data-toggle="modal" data-target="#addFoodModal">Добавить новое блюдо</button>
+        <button class="btn btn-warning btn-block" data-bind="click:share">Рассказать о том, что я ем</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-bind="with:addFoodModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
+                <h4 class="modal-title">Добавить еду</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-4 control-label">Имя</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputName" data-bind="value:name" placeholder="Введите Имя">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modalMessage errorText" data-bind="text: error"></div>
+                <button class="btn btn-default" data-dismiss="modal">Отмена</button>
+                <button class="btn btn-success" data-bind="click: onSubmit">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/app/index.datacontext.js")
+    @Scripts.Render("~/Scripts/app/index.js")
+}

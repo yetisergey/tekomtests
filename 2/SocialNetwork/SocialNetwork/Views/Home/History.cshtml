@@ -1,0 +1,14 @@
+﻿<div class="well text-center">
+    <h4 data-bind="text:hello"></h4>
+</div>
+
+<h2>Лента</h2>
+<ul data-bind="foreach:list">
+    <li data-bind="text:$data"></li>
+</ul>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/app/history.datacontext.js")
+    @Scripts.Render("~/Scripts/app/history.js")
+}
